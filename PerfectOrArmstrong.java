@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class  PerfectOrArmstrong{
+public class PerfectOrArmstrong {
     public static void main(String[] args) {
         // Your Code goes here!
                Scanner sc=new Scanner(System.in);
@@ -7,8 +7,9 @@ public class  PerfectOrArmstrong{
                boolean isPerfect=false;
                boolean isEven=true;
                int root=0;
-               System.out.print("Enter a Number to check even,odd,Armstrond,perfect and digital roots :");
+               System.out.print("Enter a Number to check even, odd, Armstrond, perfect and digital roots :");
                int N=sc.nextInt();
+               if(N>0){
                //Armstrong
                //to find digits
                int digit=(int)Math.log10(N*10);
@@ -39,13 +40,14 @@ public class  PerfectOrArmstrong{
                 isEven=false;
               }
               //digital root
-              if(N%9==0){
+               if(N<10){
+                root=1;
+              }
+             else if(N%9==0){
                 root=0;
               }
-              else if(N==0){
-                root=0;
-              }
-              else{
+             
+            else{
                 root=N%9;
               }
               System.out.println("The Digital Root is "+ root);
@@ -77,6 +79,10 @@ public class  PerfectOrArmstrong{
             }
             
           }
+      }
+      else{
+        System.out.println("Negative Number ");
+      }
            
           
     }
